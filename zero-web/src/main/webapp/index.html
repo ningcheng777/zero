@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>ningcheng</title>
+    <script type="text/javascript" src="www/lib/jquery-3.2.1.min.js">
+    </script>
+    <script type="text/javascript">
+        $.get("module/getAll", function (data, status) {
+            $.each(data, function (index, value) {
+                $("#moduleList").append("<li><a href=''>" + value.name + "</a>  <p>" + value.note + "</p></li>");
+            });
+        });
+    </script>
+    <head>
+<body>
+<h2>首页</h2>
+<h5>模块</h5>
+<ol id="moduleList">
+</ol>
+</body>
+</html>

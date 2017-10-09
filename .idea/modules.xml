@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/zero.iml" filepath="$PROJECT_DIR$/zero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-common/zero-common.iml" filepath="$PROJECT_DIR$/zero-common/zero-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-dal/zero-dal.iml" filepath="$PROJECT_DIR$/zero-dal/zero-dal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service/zero-service.iml" filepath="$PROJECT_DIR$/zero-service/zero-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-web/zero-web.iml" filepath="$PROJECT_DIR$/zero-web/zero-web.iml" />
     </modules>
   </component>
 </project>

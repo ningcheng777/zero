@@ -6,11 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zero" />
+        <module name="zero-backend" />
+        <module name="zero-base" />
+        <module name="zero-common" />
+        <module name="zero-dal" />
+        <module name="zero-service" />
+        <module name="zero-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
-      <module name="zero" target="1.5" />
+      <module name="zero" target="1.8" />
+      <module name="zero-backend" target="1.8" />
+      <module name="zero-base" target="1.8" />
+      <module name="zero-common" target="1.8" />
+      <module name="zero-dal" target="1.8" />
+      <module name="zero-service" target="1.8" />
+      <module name="zero-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
