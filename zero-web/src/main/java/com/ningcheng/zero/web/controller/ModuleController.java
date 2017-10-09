@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2017/10/9
  */
 @Controller
-@RequestMapping(value = "/module")
+@RequestMapping("/module")
 public class ModuleController {
     @Autowired
     private ModuleService moduleService;
