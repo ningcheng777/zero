@@ -1,10 +1,10 @@
-package com.ningcheng.zero.dal.module;
+package dal.module;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.ningcheng.zero.dal.base.MyBatisDaoImpl;
+import dal.base.MyBatisDaoImpl;
 import org.springframework.stereotype.Repository;
 
 @Repository("moduleDao")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="module">
-    <resultMap id="module" type="com.ningcheng.zero.dal.module.ModuleDO"/>
+    <resultMap id="module" type="dal.module.ModuleDO"/>
     <select id="selectAll" resultMap="module">
     select *
     from module

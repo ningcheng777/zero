@@ -1,6 +1,5 @@
-import com.ningcheng.zero.common.model.Module;
-import com.ningcheng.zero.dal.module.ModuleDO;
-import com.ningcheng.zero.service.module.ModuleService;
+import common.model.Module;
+import service.module.ModuleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

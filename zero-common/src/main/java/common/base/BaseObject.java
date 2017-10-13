@@ -1,4 +1,4 @@
-package com.ningcheng.zero.common.base;
+package common.base;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

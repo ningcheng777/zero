@@ -1,4 +1,4 @@
-package com.ningcheng.zero.dal.interceptor;
+package dal.interceptor;
 
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;

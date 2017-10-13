@@ -17,6 +17,11 @@
             <artifactId>zero-dal</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>ningcheng</groupId>
+            <artifactId>zero-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--spring-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -72,11 +77,6 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
             <version>${spring.data.redis.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ningcheng</groupId>
-            <artifactId>zero-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

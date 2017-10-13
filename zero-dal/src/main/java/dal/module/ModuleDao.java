@@ -1,4 +1,4 @@
-package com.ningcheng.zero.dal.module;
+package dal.module;
 
 
 import java.util.List;

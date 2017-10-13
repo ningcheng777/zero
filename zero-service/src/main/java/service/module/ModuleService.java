@@ -1,7 +1,6 @@
-package com.ningcheng.zero.service.module;
+package service.module;
 
-import com.ningcheng.zero.common.model.Module;
-import com.ningcheng.zero.dal.module.ModuleDO;
+import common.model.Module;
 
 import java.util.List;
 

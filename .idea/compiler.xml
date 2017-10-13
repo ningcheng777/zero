@@ -11,6 +11,7 @@
         <module name="zero-common" />
         <module name="zero-dal" />
         <module name="zero-service" />
+        <module name="zero-storm" />
         <module name="zero-web" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="zero-common" target="1.8" />
       <module name="zero-dal" target="1.8" />
       <module name="zero-service" target="1.8" />
+      <module name="zero-storm" target="1.8" />
       <module name="zero-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>

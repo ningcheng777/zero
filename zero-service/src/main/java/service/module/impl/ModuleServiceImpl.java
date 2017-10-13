@@ -1,16 +1,15 @@
-package com.ningcheng.zero.service.module.impl;
+package service.module.impl;
 
-import com.ningcheng.zero.common.model.Module;
-import com.ningcheng.zero.dal.module.ModuleDO;
-import com.ningcheng.zero.dal.module.ModuleDao;
-import com.ningcheng.zero.service.module.ModuleService;
+import common.model.Module;
+import dal.module.ModuleDO;
+import dal.module.ModuleDao;
+import service.module.ModuleService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
