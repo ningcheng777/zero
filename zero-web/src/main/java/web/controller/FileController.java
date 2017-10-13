@@ -1,4 +1,4 @@
-package com.ningcheng.zero.web.controller;
+package web.controller;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
@@ -73,8 +73,8 @@ public class FileController {
                     throw new RuntimeException("文件创建失败");
                 }
 
-                FileInputStream fis = new FileInputStream(file);
-                OutputStream os = item.getOutputStream();
+                fos = new FileOutputStream(file);
+                is = item.getInputStream();
 
                 byte[] b = new byte[1024];
                 while (is.read(b) != -1) {
@@ -97,7 +97,7 @@ public class FileController {
                     is.close();
                 }
             } catch (IOException e) {
-
+                //什么也不做
             }
         }
         return "success";
@@ -141,7 +141,7 @@ public class FileController {
                     os.close();
                 }
             } catch (IOException e) {
-
+                //什么也不做
             }
         }
         return "success";

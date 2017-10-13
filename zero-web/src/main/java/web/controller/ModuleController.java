@@ -1,7 +1,7 @@
-package com.ningcheng.zero.web.controller;
+package web.controller;
 
-import com.ningcheng.zero.common.model.Module;
-import com.ningcheng.zero.service.module.ModuleService;
+import common.model.Module;
+import service.module.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
