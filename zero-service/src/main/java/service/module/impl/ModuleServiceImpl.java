@@ -1,13 +1,14 @@
 package service.module.impl;
 
+import common.base.ZeroTX;
 import common.model.Module;
 import dal.module.ModuleDO;
 import dal.module.ModuleDao;
-import service.module.ModuleService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import service.module.ModuleService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class ModuleServiceImpl implements ModuleService {
 
     @Override
     public List<Module> getAll() {
-        List<Module> ret = new ArrayList<Module>();
+        List<Module> ret = new ArrayList<>();
         List<ModuleDO> queryList = moduleDao.getAll();
         if (CollectionUtils.isEmpty(queryList)) {
             return ret;
@@ -48,5 +49,22 @@ public class ModuleServiceImpl implements ModuleService {
             }
         }
         return ret;
+    }
+
+    @Override
+    @ZeroTX
+    public void createOrUpdate(Module module) {
+        if (module == null) {
+            return;
+        }
+        ModuleDO moduleDO = new ModuleDO();
+        BeanUtils.copyProperties(moduleDO, module);
+        moduleDao.insertOrUpdate(moduleDO);
+    }
+
+    @Override
+    @ZeroTX
+    public void remove(long id) {
+        moduleDao.delete(id);
     }
 }

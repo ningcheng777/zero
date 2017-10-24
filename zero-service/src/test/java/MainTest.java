@@ -1,4 +1,4 @@
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
 /**
  * @author ningcheng
@@ -6,5 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class MainTest {
     public static void main(String[] args) {
+        String s = "http://fdfs.test.ximalaya.com/group1/M01/53/39/wKgDplnkMXeACnlkAADb5UZ-7B8333.png";
+        System.out.println(s.length());
     }
 }

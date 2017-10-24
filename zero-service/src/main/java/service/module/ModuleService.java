@@ -13,4 +13,8 @@ public interface ModuleService {
     Module get(long id);
 
     List<Module> getAll();
+
+    void createOrUpdate(Module module);
+
+    void remove(long id);
 }
