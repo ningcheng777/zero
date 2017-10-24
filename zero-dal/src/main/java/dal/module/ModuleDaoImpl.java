@@ -21,4 +21,16 @@ public class ModuleDaoImpl extends MyBatisDaoImpl implements ModuleDao {
         params.put("id", id);
         return sqlSession.selectOne("module.select", params);
     }
+
+    @Override
+    public void insertOrUpdate(ModuleDO moduleDO) {
+        sqlSession.insert("module.insertOrUpdate", moduleDO);
+    }
+
+    @Override
+    public void delete(long id) {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("id", id);
+        sqlSession.delete("module.delete", params);
+    }
 }

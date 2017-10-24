@@ -5,7 +5,11 @@ import java.util.List;
 
 public interface ModuleDao {
 
-  List<ModuleDO> getAll();
+    List<ModuleDO> getAll();
 
-  ModuleDO get(long id);
+    ModuleDO get(long id);
+
+    void insertOrUpdate(ModuleDO moduleDO);
+
+    void delete(long id);
 }

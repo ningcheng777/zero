@@ -2,13 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="module">
     <resultMap id="module" type="dal.module.ModuleDO"/>
+    <parameterMap id="module" type="dal.module.ModuleDO"/>
+
     <select id="selectAll" resultMap="module">
     select *
     from module
     </select>
+
     <select id="select" resultMap="module" parameterType="java.util.Map">
     SELECT *
     FROM module
     WHERE id = #{id}
-  </select>
+    </select>
+
+    <insert id="insertOrUpdate" parameterMap="module">
+        insert into module
+        (id, name, note)
+        values
+        (#{id}, #{name}, #{note})
+        ON DUPLICATE KEY UPDATE
+        id = values(id),
+        name = VALUES (name),
+        note = VALUES (note)
+    </insert>
+
+    <delete id="delete" parameterType="java.util.Map">
+        delete from module
+        where id = #{id}
+    </delete>
 </mapper>
