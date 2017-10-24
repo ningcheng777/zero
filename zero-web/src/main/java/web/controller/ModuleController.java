@@ -1,6 +1,7 @@
 package web.controller;
 
 import common.model.Module;
+import org.springframework.web.bind.annotation.RequestBody;
 import service.module.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,5 +32,17 @@ public class ModuleController {
     public @ResponseBody
     Module get(@RequestParam("id") long id) {
         return moduleService.get(id);
+    }
+
+    @RequestMapping(value = "/createOrUpdate", method = RequestMethod.POST)
+    public @ResponseBody
+    void createOrUpdate(@RequestBody Module module) {
+        moduleService.createOrUpdate(module);
+    }
+
+    @RequestMapping(value = "/remove", method = RequestMethod.GET)
+    public @ResponseBody
+    void remove(@RequestParam("id") long id) {
+        moduleService.remove(id);
     }
 }
