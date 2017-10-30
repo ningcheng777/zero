@@ -1,6 +1,7 @@
 package service.module.impl;
 
 import common.base.ZeroTX;
+import common.cache.redis.RedisCache;
 import common.model.Module;
 import dal.module.ModuleDO;
 import dal.module.ModuleDao;
@@ -22,15 +23,22 @@ public class ModuleServiceImpl implements ModuleService {
 
     @Autowired
     private ModuleDao moduleDao;
+    @Autowired
+    private RedisCache<Long, Module> moduleCache;
 
     @Override
     public Module get(long id) {
+        Module cacheRet = moduleCache.get(id);
+        if (cacheRet != null) {
+            return cacheRet;
+        }
         Module ret = new Module();
         ModuleDO moduleDO = moduleDao.get(id);
         if (moduleDO == null) {
             return null;
         }
         BeanUtils.copyProperties(moduleDO, ret);
+        moduleCache.put(id, ret);
         return ret;
     }
 
@@ -60,11 +68,13 @@ public class ModuleServiceImpl implements ModuleService {
         ModuleDO moduleDO = new ModuleDO();
         BeanUtils.copyProperties(moduleDO, module);
         moduleDao.insertOrUpdate(moduleDO);
+        moduleCache.evit(module.getId());
     }
 
     @Override
     @ZeroTX
     public void remove(long id) {
         moduleDao.delete(id);
+        moduleCache.evit(id);
     }
 }
