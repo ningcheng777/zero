@@ -3,6 +3,7 @@ package common.cache.redis;
 import common.cache.Cache;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.RedisScript;
 
 import java.util.Collection;
 import java.util.List;
@@ -76,5 +77,9 @@ public class RedisCache<K, T> implements Cache<K, T>, InitializingBean {
 
     public void setTimeout(int timeout) {
         this.timeout = timeout;
+    }
+
+    public <V> V eval(RedisScript<V> script, List<K> keys, Object... args) {
+        return redisTemplate.execute(script, keys, args);
     }
 }
