@@ -1,6 +1,6 @@
-package common.cache.redis;
+package service.cache.redis;
 
-import common.cache.Cache;
+import service.cache.Cache;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.RedisScript;

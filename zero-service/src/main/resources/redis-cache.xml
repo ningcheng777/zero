@@ -32,7 +32,7 @@
         <property name="connectionFactory" ref="connectionFactory"/>
     </bean>
 
-    <bean id="moduleCache" class="common.cache.redis.RedisCache">
+    <bean id="moduleCache" class="service.cache.redis.RedisCache">
         <property name="redisTemplate" ref="redisTemplate"/>
     </bean>
 </beans>

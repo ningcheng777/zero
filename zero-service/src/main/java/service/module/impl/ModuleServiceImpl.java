@@ -1,7 +1,7 @@
 package service.module.impl;
 
 import common.base.ZeroTX;
-import common.cache.redis.RedisCache;
+import service.cache.redis.RedisCache;
 import common.model.Module;
 import dal.module.ModuleDO;
 import dal.module.ModuleDao;

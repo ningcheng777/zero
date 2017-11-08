@@ -1,4 +1,4 @@
-package common.cache;
+package service.cache;
 
 import java.util.Collection;
 import java.util.List;

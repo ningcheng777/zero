@@ -1,4 +1,4 @@
-package common.socket;
+package service.socket;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

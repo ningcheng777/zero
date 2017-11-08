@@ -1,4 +1,4 @@
-package common.concurrent.test;
+package service.concurrent.test;
 
 /**
  * @author ningcheng

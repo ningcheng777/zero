@@ -1,4 +1,4 @@
-package common.http;
+package service.http;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;

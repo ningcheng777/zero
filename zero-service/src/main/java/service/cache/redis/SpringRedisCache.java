@@ -1,4 +1,4 @@
-package common.cache.redis;
+package service.cache.redis;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

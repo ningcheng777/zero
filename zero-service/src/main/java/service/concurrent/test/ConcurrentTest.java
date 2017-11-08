@@ -1,6 +1,6 @@
-package common.concurrent.test;
+package service.concurrent.test;
 
-import common.http.ConnectionManager;
+import service.http.ConnectionManager;
 
 import java.text.NumberFormat;
 import java.util.concurrent.ConcurrentHashMap;
