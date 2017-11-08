@@ -13,7 +13,6 @@
         <module>zero-web</module>
         <module>zero-service</module>
         <module>zero-common</module>
-        <module>zero-storm</module>
     </modules>
 
     <properties>

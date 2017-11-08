@@ -1,4 +1,4 @@
-package common.util;
+package service.algo;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
