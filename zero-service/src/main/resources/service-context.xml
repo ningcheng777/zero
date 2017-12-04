@@ -10,8 +10,7 @@
     <import resource="classpath:redis-cache.xml"/>
     <import resource="classpath:dal-context"/>
 
-    <bean class="common.util.ApplicationContextUtils"/>
-    <context:component-scan base-package="service"/>
+    <bean class="zero.common.util.ApplicationContextUtils"/>
+    <context:component-scan base-package="zero.service"/>
     <context:annotation-config/>
-    <!--<aop:aspectj-autoproxy/>-->
 </beans>

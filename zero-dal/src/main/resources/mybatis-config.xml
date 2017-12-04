@@ -7,7 +7,7 @@
         <property name="dialect" value="mysql"/>
     </properties>
     <plugins>
-        <plugin interceptor="dal.interceptor.SQLStatsInterceptor">
+        <plugin interceptor="zero.dal.interceptor.SQLStatsInterceptor">
             <property name="dialect" value="mysql" />
         </plugin>
     </plugins>
