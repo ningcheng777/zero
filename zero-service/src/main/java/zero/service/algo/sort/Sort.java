@@ -64,24 +64,19 @@ public class Sort {
     private static void mergeSortInternal(int[] s, int left, int right) {
         if (right <= left) {
             return;
-        } else if (right == left + 1) {
-            if (s[right] < s[left]) {
-                swap(s, left, right);
-            }
-            return;
         }
         int mid = (right + left) / 2;
-        mergeSortInternal(s, left, mid - 1);
-        mergeSortInternal(s, mid, right);
+        mergeSortInternal(s, left, mid);
+        mergeSortInternal(s, mid + 1, right);
         merge(s, left, right, mid);
     }
 
     private static void merge(int[] s, int left, int right, int mid) {
         System.arraycopy(s, left, aux, left, right + 1 - left);
         int leftCursor = left;
-        int rightCursor = mid;
+        int rightCursor = mid + 1;
         for (int j = left; j <= right; j++) {
-            if (leftCursor > mid - 1) {
+            if (leftCursor > mid) {
                 s[j] = aux[rightCursor++];
             } else if (rightCursor > right) {
                 s[j] = aux[leftCursor++];
