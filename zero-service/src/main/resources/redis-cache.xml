@@ -13,9 +13,10 @@
     </bean>
 
     <bean id="jedisPool" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxIdle" value="${redis.maxIdle}"/>
-        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
-        <property name="testOnReturn" value="${redis.testOnReturn}"/>
+        <!--<property name="maxIdle" value="${redis.maxIdle}"/>-->
+        <!--<property name="maxTotal" value="${redis.maxTotal}"/>-->
+        <!--<property name="testOnBorrow" value="${redis.testOnBorrow}"/>-->
+        <!--<property name="testOnReturn" value="${redis.testOnReturn}"/>-->
         <property name="testWhileIdle" value="${redis.testWhileIdle}"/>
     </bean>
 

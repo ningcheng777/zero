@@ -19,16 +19,14 @@ public class PressureTest extends Thread {
     private int thread_num = 10;
     private int client_num = 1000;
 
-    private float avg_exec_time = 0;
     private float sum_exec_time = 0;
     private long first_exec_time = Long.MAX_VALUE;
     private long last_done_time = Long.MIN_VALUE;
-    private float total_exec_time = 0;
 
     private String url = "";
     private String postData = "";
 
-    public PressureTest(int thread_num, int client_num, String url, String postData) {
+    private PressureTest(int thread_num, int client_num, String url, String postData) {
 
         this.thread_num = thread_num;
         this.client_num = client_num;
@@ -44,7 +42,7 @@ public class PressureTest extends Thread {
         final ConcurrentHashMap<Integer, ThreadRecord> records = new ConcurrentHashMap<Integer, ThreadRecord>();
 
         // 建立ExecutorService线程池
-        ExecutorService exec = Executors.newFixedThreadPool(thread_num);
+        ExecutorService pool = Executors.newFixedThreadPool(thread_num);
         // thread_num个线程可以同时访问
         // 模拟client_num个客户端访问
 
@@ -60,24 +58,22 @@ public class PressureTest extends Thread {
                     long st = System.currentTimeMillis();
 
                     try {
-
-                        //这里引用一些开源包，看者可自行修改
                         ConnectionManager.get(currentObj.url);
                     } catch (Exception e) {
                         ///
                     }
                     records.put(index, new ThreadRecord(st, System.currentTimeMillis()));
-                    doneSignal.countDown();//每调用一次countDown()方法，计数器减1
+                    doneSignal.countDown();
                 }
             };
-            exec.execute(run);
+            pool.execute(run);
         }
 
         try {
             //计数器大于0 时，await()方法会阻塞程序继续执行
             doneSignal.await();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            ///
         }
 
         /*
@@ -95,17 +91,16 @@ public class PressureTest extends Thread {
             }
         }
 
-        this.avg_exec_time = this.sum_exec_time / records.size();
-        this.total_exec_time = ((float) (this.last_done_time - this.first_exec_time)) / 1000;
+        float avg_exec_time = this.sum_exec_time / records.size();
+        float total_exec_time = ((float) (this.last_done_time - this.first_exec_time)) / 1000;
         NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumFractionDigits(4);
 
-
         System.out.println("======================================================");
         System.out.println("Thread Num: " + thread_num + ", Client Count: " + client_num + ".");
-        System.out.println("Avg Exec Time:   " + nf.format(this.avg_exec_time) + " s");
-        System.out.println("Total Exec Time: " + nf.format(this.total_exec_time) + " s");
-        System.out.println("Throughput:      " + nf.format(this.client_num / this.total_exec_time) + " /s");
+        System.out.println("Avg Exec Time:   " + nf.format(avg_exec_time) + " s");
+        System.out.println("Total Exec Time: " + nf.format(total_exec_time) + " s");
+        System.out.println("Throughput:      " + nf.format(client_num / total_exec_time) + " /s");
     }
 
     private static int getIndex() {
