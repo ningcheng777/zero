@@ -1,4 +1,4 @@
-package zero.service.algo.sort;
+package zero.service.algo;
 
 /**
  * @author ningcheng
