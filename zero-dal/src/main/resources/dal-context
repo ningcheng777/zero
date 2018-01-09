@@ -11,7 +11,7 @@
 
     <!-- 【扫描注解配置的DAO】 -->
     <context:annotation-config/>
-    <context:component-scan base-package="dal"/>
+    <context:component-scan base-package="zero.dal"/>
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="order" value="1"/>

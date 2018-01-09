@@ -1,23 +1,16 @@
-package zero.common.base;
+package zero.common.base.object;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import java.io.Serializable;
 
 /**
  * @author ningcheng
- * @date 2017/9/6
+ * @date 2018/1/9
  */
-public class BaseObject implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-    public BaseObject() {
-    }
-
+public class BaseObject {
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return JSON.toJSONString(this);
     }
 
     public boolean equals(Object obj) {

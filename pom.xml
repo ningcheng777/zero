@@ -35,6 +35,8 @@
         <aspectj.version>1.5.3</aspectj.version>
         <unirest.version>1.4.9</unirest.version>
         <apache.httpclient.version>4.5.2</apache.httpclient.version>
+        <beetl.version>2.5.0</beetl.version>
+        <servlet.api>2.5</servlet.api>
     </properties>
 
     <build>
