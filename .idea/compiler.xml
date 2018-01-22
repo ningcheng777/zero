@@ -10,7 +10,6 @@
         <module name="zero-base" />
         <module name="zero-common" />
         <module name="zero-dal" />
-        <module name="zero-service" />
         <module name="zero-web" />
       </profile>
     </annotationProcessing>
