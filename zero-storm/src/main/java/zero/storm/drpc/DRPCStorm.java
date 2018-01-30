@@ -9,7 +9,7 @@ import org.apache.storm.drpc.LinearDRPCTopologyBuilder;
  * @author ningcheng
  * @date 2018/1/26
  */
-public class DRPCLocalStorm {
+public class DRPCStorm {
 
     public static void main(String[] args) {
         LocalDRPC drpc = new LocalDRPC();

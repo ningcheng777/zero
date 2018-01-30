@@ -8,7 +8,7 @@ import org.apache.storm.topology.TopologyBuilder;
  * @author ningcheng
  * @date 2018/1/26
  */
-public class SimpleLocalStorm {
+public class SimpleStorm {
 
     public static void main(String[] args) throws InterruptedException {
         Config config = new Config();
