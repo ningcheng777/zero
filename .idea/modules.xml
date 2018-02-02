@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/zero-dal/zero-dal.iml" filepath="$PROJECT_DIR$/zero-dal/zero-dal.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-storm/zero-storm.iml" filepath="$PROJECT_DIR$/zero-storm/zero-storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-web/zero-web.iml" filepath="$PROJECT_DIR$/zero-web/zero-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-zk/zero-zk.iml" filepath="$PROJECT_DIR$/zero-zk/zero-zk.iml" />
     </modules>
   </component>
 </project>
