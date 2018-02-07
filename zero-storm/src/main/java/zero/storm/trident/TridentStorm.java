@@ -2,7 +2,6 @@ package zero.storm.trident;
 
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
-import org.apache.storm.shade.com.google.common.collect.ImmutableList;
 import org.apache.storm.trident.TridentTopology;
 import org.apache.storm.trident.operation.BaseFunction;
 import org.apache.storm.trident.operation.TridentCollector;
@@ -22,9 +21,12 @@ public class TridentStorm {
     public static void main(String[] args) {
 
         TridentTopology topology = new TridentTopology();
-        FixedBatchSpout spout = new FixedBatchSpout(new Fields("sentence"), 1,
-                new Values("apples"));
-        spout.setCycle(true);
+        FixedBatchSpout spout = new FixedBatchSpout(new Fields("sentence"), 2,
+                new Values("v1"),
+                new Values("v2"),
+                new Values("v3"),
+                new Values("v4"));
+//        spout.setCycle(true);
 
 //        FeederBatchSpout spout = new FeederBatchSpout(ImmutableList.of("sentence"));
 

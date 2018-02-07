@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author ningcheng
  * @date 2018/2/2
  */
-public class MainTest {
+public class ZKTest {
 
     public static void main(String[] args) throws Exception {
         CuratorFramework client = CuratorFrameworkFactory.newClient(

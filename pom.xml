@@ -13,7 +13,7 @@
         <module>zero-web</module>
         <module>zero-common</module>
         <module>zero-storm</module>
-        <module>zero-zk</module>
+        <module>zero-hadoop</module>
     </modules>
 
     <properties>
