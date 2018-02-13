@@ -97,7 +97,7 @@ public class PressureTest extends Thread {
         nf.setMaximumFractionDigits(4);
 
         System.out.println("======================================================");
-        System.out.println("Thread Num: " + thread_num + ", Client Count: " + client_num + ".");
+        System.out.println("Thread Num: " + thread_num + ", TcpServer Count: " + client_num + ".");
         System.out.println("Avg Exec Time:   " + nf.format(avg_exec_time) + " s");
         System.out.println("Total Exec Time: " + nf.format(total_exec_time) + " s");
         System.out.println("Throughput:      " + nf.format(client_num / total_exec_time) + " /s");
