@@ -14,6 +14,7 @@
         <module>zero-common</module>
         <module>zero-storm</module>
         <module>zero-hadoop</module>
+        <module>zero-kafka</module>
     </modules>
 
     <properties>

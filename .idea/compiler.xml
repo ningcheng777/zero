@@ -9,6 +9,7 @@
         <module name="zero-common" />
         <module name="zero-dal" />
         <module name="zero-hadoop" />
+        <module name="zero-kafka" />
         <module name="zero-storm" />
         <module name="zero-web" />
         <module name="zeroh-base" />
@@ -19,6 +20,7 @@
       <module name="zero-common" target="1.8" />
       <module name="zero-dal" target="1.8" />
       <module name="zero-hadoop" target="1.8" />
+      <module name="zero-kafka" target="1.8" />
       <module name="zero-storm" target="1.8" />
       <module name="zero-web" target="1.8" />
       <module name="zero-zk" target="1.8" />
