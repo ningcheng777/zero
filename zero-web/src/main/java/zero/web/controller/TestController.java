@@ -6,12 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedWriter;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author ningcheng
@@ -36,4 +31,6 @@ public class TestController {
         out.write("a3,a4".getBytes());
         response.flushBuffer();
     }
+
+
 }

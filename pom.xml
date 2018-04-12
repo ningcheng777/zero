@@ -18,8 +18,6 @@
         <module>zero-netty</module>
         <module>zero-es</module>
         <module>zero-spark</module>
-        <module>zero-mainstay</module>
-        <module>zero-varnish</module>
     </modules>
 
     <properties>
