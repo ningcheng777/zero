@@ -40,11 +40,8 @@ public class SimpleSpout implements IRichSpout {
 
     @Override
     public void nextTuple() {
-        if (index++ < 3) {
-            for (int i = 0; i < 5; i++) {
-                collector.emit(new Values(index + "," + i), null);
-                System.out.println("emit " + index + "," + i);
-            }
+        if (index++ < 5) {
+            collector.emit(new Values(index), index);
         }
     }
 

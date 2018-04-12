@@ -31,10 +31,6 @@ public class TestController {
             throws Exception {
         response.setContentType("application/msexcel;charset=GBK");
         response.setHeader("Content-Disposition", "attachment;filename=sss.csv");
-//        List<String> ss = new ArrayList<>();
-//        ss.add("a1");
-//        ss.add("a2");
-
         OutputStream out = response.getOutputStream();
         out.write("a1,a2\n".getBytes());
         out.write("a3,a4".getBytes());

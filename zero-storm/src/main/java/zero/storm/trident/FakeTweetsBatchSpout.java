@@ -129,16 +129,18 @@ public class FakeTweetsBatchSpout implements IBatchSpout {
         double rnd = randomGenerator.nextDouble();
         double accum = 0;
         int index = 0;
-        for (; index < distribution.length && accum < rnd; index++, accum += distribution[index - 1])
-            ;
+        for (; index < distribution.length && accum < rnd; index++, accum += distribution[index - 1]) {
+        }
         return index - 1;
     }
 
     public static void main(String[] args) throws IOException, ParseException {
         FakeTweetsBatchSpout spout = new FakeTweetsBatchSpout();
         spout.open(null, null);
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 30; i++) {
             System.out.println(spout.getNextTweet());
+
+        }
     }
 
 }

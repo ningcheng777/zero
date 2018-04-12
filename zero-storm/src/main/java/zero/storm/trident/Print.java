@@ -14,16 +14,13 @@ import java.util.Map;
  */
 public class Print extends BaseFilter {
 
-    private int partitionIndex;
-
     @Override
     public void prepare(Map conf, TridentOperationContext context) {
-        partitionIndex = context.getPartitionIndex();
     }
 
     @Override
     public boolean isKeep(TridentTuple tuple) {
-        System.out.println(partitionIndex + "," + Thread.currentThread() + ":" + tuple.toString());
+        System.out.println("ret:" + tuple.toString());
         return true;
     }
 }

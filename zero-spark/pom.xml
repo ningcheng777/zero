@@ -9,14 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zero-storm</artifactId>
+    <artifactId>zero-spark</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.storm</groupId>
-            <artifactId>storm-core</artifactId>
-            <version>1.2.1</version>
-            <!--<scope>provided</scope>-->
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
+
 </project>

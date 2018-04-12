@@ -4,7 +4,9 @@ import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
 import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
+import org.apache.storm.tuple.Values;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.Map;
 public class SimpleBolt1 implements IRichBolt {
 
     private OutputCollector collector;
-    private List<String> values = new ArrayList<>();
+    private List<Integer> values = new ArrayList<>();
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
@@ -26,23 +28,25 @@ public class SimpleBolt1 implements IRichBolt {
 
     @Override
     public void execute(Tuple tuple) {
-        String val = tuple.getString(0);
-        if (!values.contains(val)) {
-            values.add(val);
+        Integer val = tuple.getInteger(0);
+        if (val == 3) {
             collector.fail(tuple);
+            return;
         }
-        values.add(val + ",2");
-        collector.ack(tuple);
+        values.add(val);
+        collector.emit(tuple, new Values(val));
+//        collector.ack(tuple);
     }
 
     @Override
     public void cleanup() {
+        System.out.println("myResult1:");
         values.forEach(System.out::println);
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-
+        outputFieldsDeclarer.declare(new Fields("simple1"));
     }
 
     @Override

@@ -11,6 +11,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/zero-mainstay/pom.xml" />
+        <option value="$PROJECT_DIR$/zero-varnish/pom.xml" />
         <option value="$PROJECT_DIR$/zero-zk/pom.xml" />
       </set>
     </option>

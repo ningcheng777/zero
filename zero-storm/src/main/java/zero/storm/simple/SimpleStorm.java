@@ -16,9 +16,10 @@ public class SimpleStorm {
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("simple-spout", new SimpleSpout());
         builder.setBolt("simple-bolt-1", new SimpleBolt1()).shuffleGrouping("simple-spout");
+        builder.setBolt("simple-bolt-2", new SimpleBolt2()).shuffleGrouping("simple-bolt-1");
         LocalCluster cluster = new LocalCluster();
         cluster.submitTopology("simple-storm", config, builder.createTopology());
-        Thread.sleep(10000);
+        Thread.sleep(40000);
         cluster.shutdown();
     }
 }
