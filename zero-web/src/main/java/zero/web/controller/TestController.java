@@ -1,27 +1,42 @@
 package zero.web.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
+import java.time.LocalDateTime;
 
 /**
  * @author ningcheng
  * @date 2017/10/9
  */
-@Controller
+@RestController
 public class TestController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public @ResponseBody
-    String test() {
+    @GetMapping("/ok")
+    public String test() {
         return "success";
     }
 
-    @RequestMapping(value = "/download", method = RequestMethod.GET)
+    @GetMapping("/index")
+    public ModelAndView index() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        mv.addObject("date", LocalDateTime.now().toString());
+        return mv;
+    }
+
+    @GetMapping("/now")
+    public ModelAndView now() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("now");
+        mv.addObject("date1", LocalDateTime.now().toString());
+        return mv;
+    }
+
+    @GetMapping("/download")
     public void download1(HttpServletResponse response)
             throws Exception {
         response.setContentType("application/msexcel;charset=GBK");
