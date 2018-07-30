@@ -18,6 +18,8 @@
         <module>zero-netty</module>
         <module>zero-es</module>
         <module>zero-spark</module>
+        <module>zero-zk</module>
+        <module>zero-disruptor</module>
     </modules>
 
     <properties>

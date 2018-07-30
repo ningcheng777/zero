@@ -28,10 +28,10 @@ public class TestController {
         return mv;
     }
 
-    @GetMapping("/now")
+    @GetMapping("/now1")
     public ModelAndView now() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("now");
+        mv.setViewName("/now");
         mv.addObject("date1", LocalDateTime.now().toString());
         return mv;
     }

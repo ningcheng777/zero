@@ -15,8 +15,7 @@ import java.util.List;
 public class MySpark {
 
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName("zeroSpark").setMaster("yarn");
-        conf.set("YARN_CONF_DIR", "");
+        SparkConf conf = new SparkConf().setAppName("zeroSpark").setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         List<Integer> list = Arrays.asList(1, 2, 3);
         JavaRDD<Integer> javaRDD = sc.parallelize(list);

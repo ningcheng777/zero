@@ -1,6 +1,9 @@
 package zero.common.concurrent;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 public class ScheduleTask {
 
@@ -11,6 +14,7 @@ public class ScheduleTask {
         ScheduledFuture future = pool.scheduleAtFixedRate(
                 () -> System.out.println(++count), 2, 1, TimeUnit.SECONDS);
         pool.schedule(() -> {
+
             System.out.println("stop");
             future.cancel(false);
         }, 10, TimeUnit.SECONDS);

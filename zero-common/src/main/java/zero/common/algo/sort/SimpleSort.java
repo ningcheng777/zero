@@ -1,4 +1,4 @@
-package zero.common.algo;
+package zero.common.algo.sort;
 
 /**
  * @author ningcheng
@@ -12,7 +12,7 @@ public class SimpleSort {
         while (endComparePosition > 0) {
             lastSwapPosition = 0;
             for (int i = 0; i < endComparePosition; i++) {
-                if (SortUtil.compare(s[i], s[i + 1]) > 0) {
+                if (s[i] > s[i + 1]) {
                     SortUtil.swap(s, i, i + 1);
                     lastSwapPosition = i;
                 }
@@ -29,7 +29,7 @@ public class SimpleSort {
             minValue = s[startPos];
             minPos = startPos;
             for (int i = startPos + 1; i < s.length; i++) {
-                if (SortUtil.compare(s[i], minValue) < 0) {
+                if (s[i] < minValue) {
                     minValue = s[i];
                     minPos = i;
                 }
@@ -42,7 +42,7 @@ public class SimpleSort {
     public static void insertSort(int[] s) {
         for (int insertPos = 1; insertPos < s.length; insertPos++) {
             for (int i = insertPos - 1; i >= 0; i--) {
-                if (SortUtil.compare(s[i], s[insertPos]) <= 0) {
+                if (s[i] <= s[insertPos]) {
                     break;
                 }
                 SortUtil.swap(s, i + 1, i);

@@ -1,4 +1,4 @@
-package zero.common.algo;
+package zero.common.algo.sort;
 
 /**
  * @author ningcheng
