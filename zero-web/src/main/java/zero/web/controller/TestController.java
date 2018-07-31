@@ -36,6 +36,20 @@ public class TestController {
         return mv;
     }
 
+    @GetMapping("/sitemesh")
+    public ModelAndView sitemesh() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("example");
+        return mv;
+    }
+
+    @GetMapping("/decorator")
+    public ModelAndView decorator() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("decorator");
+        return mv;
+    }
+
     @GetMapping("/download")
     public void download1(HttpServletResponse response)
             throws Exception {
