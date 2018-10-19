@@ -5,7 +5,23 @@
 public class MainTest {
 
     public static void main(String[] args) {
-        int i = 0;
+        A a = new A();
+    }
+
+    public static class A {
+
+        {
+            System.out.println(2);
+        }
+
+        {
+            System.out.println(3);
+        }
+
+        public A() {
+            System.out.println(1);
+        }
+
     }
 
 }
