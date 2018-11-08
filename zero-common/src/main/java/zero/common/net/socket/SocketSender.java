@@ -1,20 +1,20 @@
 package zero.common.net.socket;
 
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 
 public class SocketSender {
 
     public static void main(String[] args) {
         Socket socket = null;
-        ObjectOutputStream os = null;
+        OutputStream os = null;
         try {
-            socket = new Socket("127.0.0.1", 1234);
-            os = new ObjectOutputStream(socket.getOutputStream());
-            os.writeUTF("999");
-            os.close();
-            socket.close();
+            socket = new Socket("127.0.0.1", 7777);
+            os = new BufferedOutputStream(socket.getOutputStream());
+            os.write(111);
         } catch (IOException e) {
             //
         } finally {

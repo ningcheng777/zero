@@ -20,6 +20,7 @@
         <module>zero-spark</module>
         <module>zero-zk</module>
         <module>zero-disruptor</module>
+        <module>zero-dubbo</module>
     </modules>
 
     <properties>
