@@ -1,0 +1,20 @@
+一、es的写操作处理过程
+1、先做route（默认用document_id，也可以自己指定，做hash）决定哪些节点做为replication，并选出一个primary，和其他的
+2、primary验证操作，修改自身，并同步到其他的
+3、primary本身操作错误，通知master，重试，如果超时重选primary
+4、同步其他发生错误，直接换一个
+二、es的读操作处理过程
+1、解析读操作，得到关联的index
+2、从replication group中找到一个从replication（默认轮询）
+3、拿到数据，并组装处理
+4、一个节点错误时，会找另一个从replication重试，_search可能会忽略错误，只返回部分数据
+三、bool条件
+1.must走query context，带score，慢，条件必须都满足
+2.filter走filter context,不带score，快，条件必须都满足
+3.should如果是在query context且有must和filter，条件都不满足都可以，只是用来影响score用
+4.should如果是在filter context或者没有must或filter，条件至少满足一个（可用minimum_should_match配置）
+5.must_not走filter context
+四、Doc values
+这个值和_source一样，而且也是built at document index time，也存在硬盘，但是它是面向列的，用来给sorting、aggregations、script用
+默认开，如果没有sorting、aggregations、script操作可以关掉
+五、"profile": true，分析查找操作`
