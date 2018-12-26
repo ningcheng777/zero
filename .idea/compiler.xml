@@ -14,6 +14,7 @@
         <module name="zero-hadoop" />
         <module name="zero-kafka" />
         <module name="zero-netty" />
+        <module name="zero-rabbitmq" />
         <module name="zero-spark" />
         <module name="zero-storm" />
         <module name="zero-web" />
@@ -32,6 +33,7 @@
       <module name="zero-kafka" target="1.8" />
       <module name="zero-mainstay" target="1.8" />
       <module name="zero-netty" target="1.8" />
+      <module name="zero-rabbitmq" target="1.8" />
       <module name="zero-spark" target="1.8" />
       <module name="zero-storm" target="1.8" />
       <module name="zero-varnish" target="1.8" />

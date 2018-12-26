@@ -21,6 +21,7 @@
         <module>zero-zk</module>
         <module>zero-disruptor</module>
         <module>zero-dubbo</module>
+        <module>zero-rabbitmq</module>
     </modules>
 
     <properties>

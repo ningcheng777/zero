@@ -1,0 +1,8 @@
+1.一个队列有多个consumer时，用轮询的方式轮流消费
+2.exchange四种类型fanout,direct,topic,header
+3.qos一次去拿的消息数量
+4.x-dead-letter-exchange死信队列
+   The message is rejected (basic.reject or basic.nack) with requeue=false,
+   The TTL for the message expires; or
+   The queue length limit is exceeded.
+5.确保消息publish，一.事务,二.confirmSelect
