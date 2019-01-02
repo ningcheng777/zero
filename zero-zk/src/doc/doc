@@ -1,0 +1,10 @@
+1.SyncRequestProcessor
+leader 存硬盘，->AckRequestProcessor并ack自己
+follower 存硬盘，->SendAckRequestProcessor并ack leader
+observer 存硬盘
+两种日志tx append和snapshot
+tx同步存,这里只是写入buffer，并不是每次都写硬盘，到达1000，或者没有后续，时才存到硬盘,
+append和snapshot超过一定数量（napCount / 2 + randRoll，随机数避免所有节点同时同步）异步进行,同时翻页（tx 文件换新的,tx文件名是里面最小的zxid
+,根据当前已提交的最大zxid来生成数据快照文件名（snapshot文件名是里面最大的zxid,里面最小的zxid是1）
+2.FileTxnLog的padFile(预分配)
+增加容量是只要在最后位置write一下就好，用对外内存提高效率

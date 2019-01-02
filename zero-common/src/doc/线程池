@@ -1,0 +1,12 @@
+1.关于coreSize和maxSize
+当线程数小于coreSize时，会新增worker
+当大于等于coreSize时，进队列
+当队列满了但是小于关于coreSize和maxSize，新增worker
+2.生命周期
+ RUNNING:  进行中
+SHUTDOWN: 不接受新的，但是仍然处理队列
+    STOP:     不接受新的，不处理队列，中断进行中的
+ TIDYING:  所有都终止，马上执行terminated
+ TERMINATED: terminated完毕
+3.worker中断，要等里面执行完，才中断，所以搞了一个锁
+
