@@ -9,4 +9,9 @@ SHUTDOWN: 不接受新的，但是仍然处理队列
  TIDYING:  所有都终止，马上执行terminated
  TERMINATED: terminated完毕
 3.worker中断，要等里面执行完，才中断，所以搞了一个锁
+4.keeptimeout，如果线程数超过coresize,或者allowCoreThreadTimeOut时，并且worker getTask()里workQueue.poll(keeptimeout, timeunit)返回空，
+  即等了keeptimeout时间，task队列里还是拿不到 此时会清掉这个worker
+  newFixedThreadPool&single keeptimeout=0
+  cached keeptimeout=60s
+5.newCachedThreadPool适合大量小任务
 

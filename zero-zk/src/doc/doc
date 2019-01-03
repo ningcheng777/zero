@@ -8,3 +8,31 @@ append和snapshot超过一定数量（napCount / 2 + randRoll，随机数避免�
 ,根据当前已提交的最大zxid来生成数据快照文件名（snapshot文件名是里面最大的zxid,里面最小的zxid是1）
 2.FileTxnLog的padFile(预分配)
 增加容量是只要在最后位置write一下就好，用对外内存提高效率
+3.SessionTracker
+存一个下次清理时间，维护一个清理任务表map，key是超时检查时间点，value是sessionId的hashset，定时任务执行时，直接调清理任务表的map.remove(下次清理时间)，然后下次清理时间加时间间隔，等待下次执行
+延长session时间，当前时间加超时时间取整，然后放到上面的清理任务表map里
+4.zookeeperServcer
+5.dataTree
+6.QuorumPeer
+  3种状态：looking，leading，following
+  一开始是looking
+  变化条件
+  looking->leading或following，选举结束根据选举结果决定leading或following
+  leading->looking,follower们的心跳检测，小于一半
+  following->looking,
+7.FastLeaderElection
+优先级epoch>zxid>sid
+初始化，本地epcho为0，投票投自己，两个缓存所有票，和状态是leading的票，key都是发送人，value是票
+进行选举的两种情况，根据票的状态判断
+  1.选举中
+  异步广播投票
+  接受投票，要是收到的票epcho大于本地，epcho同步为大的那个，要是一样就比较zxid，最后要是投的人变了，就广播
+  直到，本地的票达到所有接受票缓存中半数以上，结束，返回最终票
+  2.leading
+  检查epcho和通过半数，都成功，就把这票作为最终票
+  直到，本地的票达到所有接受票缓存，或者leading票缓存中半数以上，且leader的票的状态是leading，结束，返回最终票
+8.leader和follower ping
+leader tick,每隔一个tickTime，tick加1，发两次ping给所有follower（异步），并检查是否有半数以上的follower，如果失败退出，关闭所有于follower的连接
+follower返回一个ping
+leader的每隔learnHandler存一个tickOfNextAckDeadline,收到一个请求就延长syncLimit，要是tick大于tickOfNextAckDeadline，表示这个follower没了
+
