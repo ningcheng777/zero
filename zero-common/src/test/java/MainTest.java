@@ -1,5 +1,7 @@
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import com.google.common.collect.ImmutableList;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * @author ningcheng
@@ -7,19 +9,8 @@ import java.util.concurrent.Executors;
  */
 public class MainTest {
 
-    public static void main(String[] args) {
-//        ExecutorService service = Executors.newFixedThreadPool(1);
-        Runnable r = () -> {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(1);
-        };
-//        service.execute(r);
-        new Thread(r).start();
-        System.out.println(2);
+    public static void main(String[] args) throws UnknownHostException {
+        System.out.println(ImmutableList.copyOf(InetAddress.getAllByName("www.baidu.com")));
     }
 
 }
