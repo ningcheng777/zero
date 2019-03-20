@@ -1,5 +1,7 @@
 package zero.common.algo.sort;
 
+import zero.common.algo.Utils;
+
 /**
  * @author ningcheng
  * @date 2017/11/8
@@ -13,7 +15,7 @@ public class SimpleSort {
             lastSwapPosition = 0;
             for (int i = 0; i < endComparePosition; i++) {
                 if (s[i] > s[i + 1]) {
-                    SortUtil.swap(s, i, i + 1);
+                    Utils.swap(s, i, i + 1);
                     lastSwapPosition = i;
                 }
             }
@@ -34,7 +36,7 @@ public class SimpleSort {
                     minPos = i;
                 }
             }
-            SortUtil.swap(s, startPos, minPos);
+            Utils.swap(s, startPos, minPos);
             startPos++;
         }
     }
@@ -45,7 +47,7 @@ public class SimpleSort {
                 if (s[i] <= s[insertPos]) {
                     break;
                 }
-                SortUtil.swap(s, i + 1, i);
+                Utils.swap(s, i + 1, i);
             }
         }
     }

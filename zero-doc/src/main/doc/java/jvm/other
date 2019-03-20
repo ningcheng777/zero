@@ -1,0 +1,25 @@
+1.线程状态
+开始，就绪，运行，阻塞，等待，结束
+
+2.基本数据类型大小（单位字节）
+boolean 1, byte 1, char 2, int 4, float 4, long 8, double 8
+对象基本大小 16 包括8mark区（哈希码（HashCode）、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳等）和8类型指针
+,指针大小 8，对象总大小会填充8的倍数（64位机器）
+
+3.数组对象本质上就是长度字段4字节，16字节基础大小，和具体数组值
+
+4.String对象本质是个数组和3个4长度的字段：起始位置偏移量，长度，散列值
+
+5.jvm要等所有线程都结束才关闭
+所以main方法里开启子线程要等都跑完才结束main方法
+除非设为守护线程
+
+6.jvm参数
+Xms 初始内存
+xmx 最大内存
+Xmn 年轻带内存
+Xss 每个线程栈内存
+XX:SurvivorRatio  eden 内存占比（10分之几）
+XX:MaxTenuringThreshold 晋升年龄
+-XX:+PrintGCDetails
+-verbose:gc查看gc参数

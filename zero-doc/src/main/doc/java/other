@@ -1,0 +1,8 @@
+1.stringbuilder非并发的 Stringbuffer并发的
+
+2.hashcode和equal
+都是用来判断对象是否相等，hashcode判断简单，所以先判断hashcode，hashcode不一样肯定不相同，一样的话再判断equal
+
+3.enum
+不能继承，因为已经继承Enum类了
+不能被继承，因为是final static

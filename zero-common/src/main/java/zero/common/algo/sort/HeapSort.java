@@ -1,5 +1,7 @@
 package zero.common.algo.sort;
 
+import zero.common.algo.Utils;
+
 /**
  * @author ningcheng
  * @date 2017/12/25
@@ -14,7 +16,7 @@ public class HeapSort {
             sink(pq, i, len);
         }
         while (len > 0) {
-            SortUtil.swap(pq, 1, len--);
+            Utils.swap(pq, 1, len--);
             sink(pq, 1, len);
         }
         System.arraycopy(pq, 1, s, 0, s.length);
@@ -29,7 +31,7 @@ public class HeapSort {
             if (s[k] >= s[i]) {
                 break;
             }
-            SortUtil.swap(s, k, i);
+            Utils.swap(s, k, i);
             k = i;
         }
     }

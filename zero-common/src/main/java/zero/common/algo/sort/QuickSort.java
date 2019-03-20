@@ -1,5 +1,7 @@
 package zero.common.algo.sort;
 
+import zero.common.algo.Utils;
+
 /**
  * @author ningcheng
  * @date 2017/12/25
@@ -25,15 +27,15 @@ public class QuickSort {
         int rightCursor = right;
         while (leftCursor <= rightCursor) {
             if (s[leftCursor] > mid) {
-                SortUtil.swap(s, leftCursor, rightCursor--);
+                Utils.swap(s, leftCursor, rightCursor--);
             } else if (s[rightCursor] < mid) {
-                SortUtil.swap(s, leftCursor++, rightCursor);
+                Utils.swap(s, leftCursor++, rightCursor);
             } else {
                 leftCursor++;
                 rightCursor--;
             }
         }
-        SortUtil.swap(s, left, rightCursor);
+        Utils.swap(s, left, rightCursor);
         return rightCursor;
     }
 }

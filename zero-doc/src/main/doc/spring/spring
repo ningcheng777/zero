@@ -1,0 +1,13 @@
+1.循环依赖问题
+AbstractApplicationContext#refresh()
+finishBeanFactoryInitialization()
+beanFactory.preInstantiateSingletons()
+getBean()
+doGetBean()
+isDependent()
+
+2.webAsyncTask
+
+3.beanPostProcessor
+  commandLineRunner
+  applicationListener

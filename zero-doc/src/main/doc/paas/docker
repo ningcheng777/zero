@@ -1,0 +1,16 @@
+1.docker命令
+三种启动方式
+  1.单次任务，执行完关闭docker container run image名称 命令
+  2.命令行交互，交互完关闭docker container run —interactive —tty —rm image名称 命令（bash）
+  3.后台一直运行 docker container run —detach  --publish 主机端口:容器端口 —name 容器名称 -e 环境变量设置（MYSQL_ROOT_PASSWORD=my-secret-pw）image名称
+  4.查看docker容器列表 docker container ls (—all)
+  5.日志  docker container logs container名称
+  6.执行命令 docker exec -it 容器名称 命令
+  7.dockerfile
+    1.from
+    2.copy
+    3.expose
+    4.cmd
+  8.—mount type=bind,source=“${pwd}”
+  9.docker (image) build —tag image名称:版本 .
+  10.docker image ls
