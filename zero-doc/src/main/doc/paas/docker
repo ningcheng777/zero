@@ -14,3 +14,14 @@
   8.—mount type=bind,source=“${pwd}”
   9.docker (image) build —tag image名称:版本 .
   10.docker image ls
+
+2.docker隔离原理
+  1.namespace 隔离容器环境
+  2.cgroup 控制资源
+  3.aufs 联合文件系统
+  只有第一层是可写的，其余是只读的
+  使用mount将所有层的镜像联合到一起
+  新建修改删除都只影响第一层
+  4.volume卷
+  容器内数据是临时的，会碎容器结束而消失
+  volume就是将主机目录mount到容器里

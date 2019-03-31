@@ -1,6 +1,3 @@
-import com.google.common.collect.ImmutableList;
-
-import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
@@ -10,7 +7,6 @@ import java.net.UnknownHostException;
 public class MainTest {
 
     public static void main(String[] args) throws UnknownHostException {
-        System.out.println(ImmutableList.copyOf(InetAddress.getAllByName("www.baidu.com")));
     }
 
 }
