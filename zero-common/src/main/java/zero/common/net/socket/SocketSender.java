@@ -2,7 +2,6 @@ package zero.common.net.socket;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
@@ -15,6 +14,9 @@ public class SocketSender {
             socket = new Socket("127.0.0.1", 7777);
             os = new BufferedOutputStream(socket.getOutputStream());
             os.write(111);
+            while (true) {
+
+            }
         } catch (IOException e) {
             //
         } finally {

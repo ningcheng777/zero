@@ -15,13 +15,16 @@ public class SocketReceiver {
         Socket socket = null;
         ObjectInputStream is = null;
         try {
-            server = new ServerSocket(1234);
+            server = new ServerSocket(7777);
             socket = server.accept();
             is = new ObjectInputStream(socket.getInputStream());
             String msg = is.readUTF();
             System.out.print(msg);
+            while (true) {
+
+            }
         } catch (IOException e) {
-            //
+            System.out.println(1);
         } finally {
             try {
                 if (is != null) {

@@ -1,10 +1,17 @@
 1.通过使用starter简化依赖的引入
-2.自动配置
-加了一些依赖后，会自动加载相关的bean，并且有默认配置
-load阶段会通过@import到AutoConfigurationImportSelector里
-找META-INF/spring.factories文件（包括所有jar依赖）
-实例化里面对应的configuration类
-注意META-INF/spring.factories这个文件可能在spring-boot-autoconfigure这个总的依赖里也可能在各个依赖自己里面
+开箱即用
+
+2.加了依赖后，自动加载bean，自动加载配置（@EnableAutoConfiguration）
+自动加载bean
+load阶段会通过@import到AutoConfigurationImportSelector里，找META-INF/spring.factories文件（包括所有jar依赖），并加载里面配的bean
+自动加载配置
+加载spring-boot-autoconfigure依赖里的META-INF/spring.factories文件，里面包含大部分第三方依赖的默认配置，
+通过@ConditionalOnClass去决定是否加载
+
 3.内嵌Tomcat容器
+EmbeddedServletContainerCustomizer（TomcatEmbeddedServletContainerFactory）
+配置内嵌容器参数的关键类
+
 4.actuator监控
+
 5.Spring Boot CLI运行groovy

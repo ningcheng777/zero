@@ -11,8 +11,6 @@ import java.io.IOException;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        ZooKeeper zk = new ZooKeeper("127.0.0.1:2181", 60, event -> {
-
-        });
+        ZooKeeper zk = new ZooKeeper("127.0.0.1:2181", 60);
     }
 }
