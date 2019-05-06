@@ -10,9 +10,11 @@
       <module fileurl="file://$PROJECT_DIR$/zero-dubbo/zero-dubbo.iml" filepath="$PROJECT_DIR$/zero-dubbo/zero-dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-es/zero-es.iml" filepath="$PROJECT_DIR$/zero-es/zero-es.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-hadoop/zero-hadoop.iml" filepath="$PROJECT_DIR$/zero-hadoop/zero-hadoop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-hystrix/zero-hystrix.iml" filepath="$PROJECT_DIR$/zero-hystrix/zero-hystrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-kafka/zero-kafka.iml" filepath="$PROJECT_DIR$/zero-kafka/zero-kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-netty/zero-netty.iml" filepath="$PROJECT_DIR$/zero-netty/zero-netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-rabbitmq/zero-rabbitmq.iml" filepath="$PROJECT_DIR$/zero-rabbitmq/zero-rabbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-rxjava/zero-rxjava.iml" filepath="$PROJECT_DIR$/zero-rxjava/zero-rxjava.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-spark/zero-spark.iml" filepath="$PROJECT_DIR$/zero-spark/zero-spark.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-storm/zero-storm.iml" filepath="$PROJECT_DIR$/zero-storm/zero-storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-web/zero-web.iml" filepath="$PROJECT_DIR$/zero-web/zero-web.iml" />

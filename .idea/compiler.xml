@@ -13,9 +13,11 @@
         <module name="zero-dubbo" />
         <module name="zero-es" />
         <module name="zero-hadoop" />
+        <module name="zero-hystrix" />
         <module name="zero-kafka" />
         <module name="zero-netty" />
         <module name="zero-rabbitmq" />
+        <module name="zero-rxjava" />
         <module name="zero-spark" />
         <module name="zero-storm" />
         <module name="zero-web" />
@@ -32,10 +34,12 @@
       <module name="zero-dubbo" target="1.8" />
       <module name="zero-es" target="1.8" />
       <module name="zero-hadoop" target="1.8" />
+      <module name="zero-hystrix" target="1.8" />
       <module name="zero-kafka" target="1.8" />
       <module name="zero-mainstay" target="1.8" />
       <module name="zero-netty" target="1.8" />
       <module name="zero-rabbitmq" target="1.8" />
+      <module name="zero-rxjava" target="1.8" />
       <module name="zero-spark" target="1.8" />
       <module name="zero-storm" target="1.8" />
       <module name="zero-varnish" target="1.8" />

@@ -23,6 +23,8 @@
         <module>zero-dubbo</module>
         <module>zero-rabbitmq</module>
         <module>zero-doc</module>
+        <module>zero-hystrix</module>
+        <module>zero-rxjava</module>
     </modules>
 
     <properties>
