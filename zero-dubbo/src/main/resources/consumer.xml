@@ -8,7 +8,10 @@
     <dubbo:application name="consumer-of-helloworld-app"/>
 
     <dubbo:registry address="multicast://224.5.6.7:1234"/>
+    <dubbo:registry address="multicast://224.5.6.7:1234"/>
 
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="testService" interface="zero.dubbo.TestService"/>
+    <dubbo:reference id="testService" interface="zero.dubbo.TestService" filter="test">
+        <dubbo:method name="sayHello" retries="1"/>
+    </dubbo:reference>
 </beans>

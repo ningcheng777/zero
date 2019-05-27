@@ -34,4 +34,8 @@ ConsistentHash LoadBalance
       fixed 固定大小线程池，启动时建立线程，不关闭，一直持有。(缺省)
       cached 缓存线程池，空闲一分钟自动删除，需要时重建。
       limited 可伸缩线程池，但池中的线程数只会增长不会收缩。(为避免收缩时突然来了大流量引起的性能问题)。
+4.ExtensionLoader#getExtension
+每个实例外面套了一层Holder，作用是可以对Holder加锁，保证只有一个线程去创建新实例，注意Holder的value字段要用volatile
+5.怎么获得本地ip地址
+NetUtils#getLocalAddress0
 
